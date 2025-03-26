@@ -1,0 +1,32 @@
+name: Auto Format
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  auto-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.29.2'
+          channel: 'stable'
+      
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze code
+        run: flutter analyze
+      
+      - name: Format code
+        run: dart format lib test --set-exit-if-changed
+
+      - name: Run tests
+        run: flutter test
