@@ -5,5 +5,6 @@ void main() {
   testWidgets('MyApp displays Hello World', (WidgetTester tester) async {
     // アプリをウィジェットツリーに追加
     await tester.pumpWidget(const MyApp());
+    await tester.pump(const Duration(seconds: 2));
   });
 }
