@@ -7,6 +7,7 @@ import 'package:spotify_clone/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone/core/configs/theme/app_colors.dart';
 import 'package:spotify_clone/core/configs/theme/assets/app_images.dart';
 import 'package:spotify_clone/core/configs/theme/assets/app_vectors.dart';
+import 'package:spotify_clone/presentation/auth/pages/signup_or_signin.dart';
 import 'package:spotify_clone/presentation/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
@@ -132,11 +133,12 @@ class ChooseModePage extends StatelessWidget {
 
                 BasicAppButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder:
-                            (BuildContext context) => const ChooseModePage(),
+                            (BuildContext context) =>
+                                const SignupOrSigninPage(),
                       ),
                     );
                   },
