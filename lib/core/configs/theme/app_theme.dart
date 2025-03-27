@@ -16,7 +16,7 @@ class AppTheme {
     ),
   );
 
-  static final dartTheme = ThemeData(
+  static final darkTheme = ThemeData(
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.darkBackground,
     brightness: Brightness.dark,
